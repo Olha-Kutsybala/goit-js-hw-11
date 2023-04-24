@@ -95,9 +95,7 @@ img {
 }
 
 .load-more {
-  /* text-align: center; */
-  margin-right: auto;
-  margin-left: auto;
+  text-align: center;
   height: 60px;
   min-width: 80px;
   border: 4px solid rgb(6, 189, 245);
