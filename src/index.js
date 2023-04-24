@@ -16,8 +16,6 @@ export const per_page = 40;
 
 const lightbox = new SimpleLightbox('.gallery a');
 
-refs.btnLoadMore.hidden = true;
-
 function onFormSubmit(evt) {
   evt.preventDefault();
   refs.gallery.innerHTML = '';

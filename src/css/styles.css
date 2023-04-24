@@ -95,8 +95,7 @@ img {
 }
 
 .load-more {
-  display: block;
-  text-align: center;
+  /* text-align: center; */
   margin-right: auto;
   margin-left: auto;
   height: 60px;
