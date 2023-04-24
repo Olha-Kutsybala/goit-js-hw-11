@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { totalPage } from '../index';
 import { per_page } from '../index';
 
 // ключ
