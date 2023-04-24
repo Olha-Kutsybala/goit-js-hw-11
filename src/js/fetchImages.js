@@ -3,6 +3,7 @@ import { per_page } from '../index';
 
 // ключ
 const KEY_API = '35565771-1a74a3642b20749665058107e';
+
 const BASE_URL = 'https://pixabay.com/api/';
 
 async function fetchImages(query, numberOfPage) {

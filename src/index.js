@@ -16,6 +16,8 @@ export const per_page = 40;
 
 const lightbox = new SimpleLightbox('.gallery a');
 
+refs.btnLoadMore.hidden = true;
+
 function onFormSubmit(evt) {
   evt.preventDefault();
   refs.gallery.innerHTML = '';
@@ -23,7 +25,6 @@ function onFormSubmit(evt) {
 
   if (!searchQuery.value.trim()) {
     Notify.failure('Enter the query in the search!');
-    refs.btnLoadMore.hidden = true;
     return;
   }
 
@@ -42,7 +43,6 @@ async function addGallery() {
       Notify.failure(
         'Sorry, there are no images matching your search query. Please try again.'
       );
-      refs.btnLoadMore.hidden = true;
     } else {
       renderGallery(result);
       Notify.success(`Hooray! We found ${result.length} images.`);
@@ -60,11 +60,9 @@ async function addGallery() {
 function onLoadMoreBtnClick(evt) {
   numberOfPage += 1;
   if (numberOfPage === totalPage) {
-    refs.btnLoadMore.hidden = true;
     Notify.failure(
       "We're sorry, but you've reached the end of search results."
     );
-    refs.btnLoadMore.hidden = true;
   }
   scrolling();
   addGallery();
