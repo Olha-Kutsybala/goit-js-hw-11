@@ -5,13 +5,14 @@ import { fetchImages } from './js/fetchImages';
 import { refs } from './js/refs';
 import { renderGallery } from './js/renderGallery';
 import { scrolling } from './js/scroll';
+import { totalPage } from './js/fetchImages';
 
 refs.form.addEventListener('submit', onFormSubmit);
 refs.btnLoadMore.addEventListener('click', onLoadMoreBtnClick);
 
 let query = '';
 let numberOfPage = 1;
-export let totalPage = 0;
+// export let totalPage = 0;
 export const per_page = 40;
 
 const lightbox = new SimpleLightbox('.gallery a');

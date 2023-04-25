@@ -1,11 +1,13 @@
 import axios from 'axios';
 import { per_page } from '../index';
-import { totalPage } from '../index';
+// import { totalPage } from '../index';
 
 // ключ
 const KEY_API = '35565771-1a74a3642b20749665058107e';
 
 const BASE_URL = 'https://pixabay.com/api/';
+
+let totalPage = 0;
 
 async function fetchImages(query, numberOfPage) {
   const params = new URLSearchParams({
@@ -26,4 +28,4 @@ async function fetchImages(query, numberOfPage) {
   //     console.error(error);
 }
 
-export { fetchImages };
+export { fetchImages, totalPage };
