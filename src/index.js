@@ -12,7 +12,6 @@ refs.btnLoadMore.addEventListener('click', onLoadMoreBtnClick);
 
 let query = '';
 let numberOfPage = 1;
-// export let totalPage = 0;
 export const per_page = 40;
 
 const lightbox = new SimpleLightbox('.gallery a');
