@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { per_page } from '../index';
+import { totalPage } from '../index';
 
 // ключ
 const KEY_API = '35565771-1a74a3642b20749665058107e';
