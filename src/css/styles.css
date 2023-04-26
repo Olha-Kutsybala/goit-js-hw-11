@@ -23,6 +23,10 @@ img {
   max-width: 100%;
 }
 
+.hidden {
+  display: none;
+}
+
 .form-container {
   position: fixed;
   z-index: 100;
