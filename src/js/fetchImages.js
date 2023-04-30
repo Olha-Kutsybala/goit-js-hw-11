@@ -20,9 +20,9 @@ async function fetchImages(query, numberOfPage) {
     per_page: per_page,
   });
 
-  const response = await axios.get(BASE_URL, { params });
-  totalPage = response.data.totalHits / per_page;
-  return response;
+  const { data } = await axios.get(BASE_URL, { params });
+  totalPage = data.totalHits / per_page;
+  return data;
 }
 
 export { fetchImages, totalPage };
