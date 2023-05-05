@@ -7,29 +7,29 @@ import { checkTotalRenderImage } from './checkTotalRenderImage';
 import { refs } from './refs';
 import { observer, scrolling } from './scrollFunction';
 
-// export async function onLoadMoreBtnClick(evt) {
-//   try {
-//     if (refs.checkbox.checked) {
-//       observer.observe(refs.observerTarget);
-//       loadMoreBtn.hide();
-//     } else {
-//       loadMoreBtn.loading();
-//     }
+export async function onLoadMoreBtnClick(evt) {
+  try {
+    if (refs.checkbox.checked) {
+      observer.observe(refs.observerTarget);
+      loadMoreBtn.hide();
+    } else {
+      loadMoreBtn.loading();
+    }
 
-//     setTimeout(async () => {
-//       const { hits, totalHits } = await imageApiService.fetchImages();
-//       renderGalleryMarkup(hits);
-//       if (!refs.checkbox.checked) {
-//         loadMoreBtn.endloading();
-//       }
-//       checkTotalRenderImage(totalHits);
-//     }, 1000);
-//     lightbox.refresh();
-//   } catch (error) {
-//     console.log(error);
-//   }
-//   scrolling();
-// }
+    setTimeout(async () => {
+      const { hits, totalHits } = await imageApiService.fetchImages();
+      renderGalleryMarkup(hits);
+      if (!refs.checkbox.checked) {
+        loadMoreBtn.endloading();
+      }
+      checkTotalRenderImage(totalHits);
+    }, 1000);
+    lightbox.refresh();
+  } catch (error) {
+    console.log(error);
+  }
+  scrolling();
+}
 
 export async function onFormSubmit(evt) {
   evt.preventDefault();
