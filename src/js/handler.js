@@ -7,34 +7,34 @@ import { checkTotalRenderImage } from './checkTotalRenderImage';
 import { refs } from './refs';
 import { observer, scrolling } from './scrollFunction';
 
-export async function onLoadMoreBtnClick(evt) {
-  try {
-    if (refs.checkbox.checked) {
-      observer.observe(refs.observerTarget);
-      loadMoreBtn.hide();
-    } else {
-      loadMoreBtn.loading();
-    }
+// export async function onLoadMoreBtnClick(evt) {
+//   try {
+//     if (refs.checkbox.checked) {
+//       observer.observe(refs.observerTarget);
+//       loadMoreBtn.hide();
+//     } else {
+//       loadMoreBtn.loading();
+//     }
 
-    setTimeout(async () => {
-      const { hits, totalHits } = await imageApiService.fetchImages();
-      renderGalleryMarkup(hits);
-      if (!refs.checkbox.checked) {
-        loadMoreBtn.endloading();
-      }
-      checkTotalRenderImage(totalHits);
-    }, 1000);
-    lightbox.refresh();
-  } catch (error) {
-    console.log(error);
-  }
-  scrolling();
-}
+//     setTimeout(async () => {
+//       const { hits, totalHits } = await imageApiService.fetchImages();
+//       renderGalleryMarkup(hits);
+//       if (!refs.checkbox.checked) {
+//         loadMoreBtn.endloading();
+//       }
+//       checkTotalRenderImage(totalHits);
+//     }, 1000);
+//     lightbox.refresh();
+//   } catch (error) {
+//     console.log(error);
+//   }
+//   scrolling();
+// }
 
 export async function onFormSubmit(evt) {
   evt.preventDefault();
   clearGalleryMarkup();
-  loadMoreBtn.hide();
+  // loadMoreBtn.hide();
   imageApiService.resetPage();
 
   const searchQuery = evt.target.searchQuery.value.trim();
@@ -42,7 +42,7 @@ export async function onFormSubmit(evt) {
   if (!searchQuery) {
     Notify.failure('Enter the query in the search!');
     clearGalleryMarkup();
-    loadMoreBtn.hide();
+    // loadMoreBtn.hide();
     observer.unobserve(refs.observerTarget);
     return;
   }
@@ -56,7 +56,7 @@ export async function onFormSubmit(evt) {
       Notify.failure(
         'Sorry, there are no images matching your search query. Please try again.'
       );
-      loadMoreBtn.hide();
+      // loadMoreBtn.hide();
       return;
     }
     if (hits.length > 0) {
@@ -67,7 +67,7 @@ export async function onFormSubmit(evt) {
     if (refs.checkbox.checked) {
       observer.observe(refs.observerTarget);
     } else {
-      loadMoreBtn.show();
+      // loadMoreBtn.show();
     }
 
     checkTotalRenderImage(totalHits);
